@@ -61,7 +61,7 @@
                 <div class="submit-area">
                     <h4>Withdraw</h4>
                     <input id="withdrawAmount" type="number" class="form-control" placeholder="$ amount you want to withdraw"> <br>
-                    <button id="withdraw" class="btn btn-success">Withdraw</button>
+                    <button id="addWithdraw" class="btn btn-success">Withdraw</button>
                 </div>
             </div>
         </div>
@@ -82,7 +82,7 @@
             document.getElementById(id).innerText = newAmount;
         }
 
-        // deposit button event handler
+        // deposit button event handler on mouse click
         document.getElementById('addDeposit').addEventListener('click', function() {
             const depositAmount = parseFloat(document.getElementById('depositAmount').value);
             if(depositAmount >= 0) {
@@ -92,8 +92,15 @@
             }
         })
 
-        // withdraw button event handler
-        document.getElementById('withdraw').addEventListener('click', function() {
+        // deposit button event handler on enter key press
+        document.getElementById('depositAmount').addEventListener('keyup', function(event) {
+            if(event.keyCode === 13) {
+                document.getElementById('addDeposit').click();
+            }
+        })
+
+        // withdraw button event handler on mouse click
+        document.getElementById('addWithdraw').addEventListener('click', function() {
             const withdrawAmount = parseFloat(document.getElementById('withdrawAmount').value);
             const currentBalance = parseFloat(document.getElementById('currentBalance').innerText);
             if(withdrawAmount >= 0 && withdrawAmount <= currentBalance) {
@@ -102,7 +109,13 @@
                 document.getElementById('withdrawAmount').value = "";
             }
         })
-        
+
+        // withdraw button event handler on enter key press
+        document.getElementById('withdrawAmount').addEventListener('keyup', function(event) {
+            if(event.keyCode === 13)
+                document.getElementById('addWithdraw').click();
+        })
+
     </script>
 </body>
 </html>
