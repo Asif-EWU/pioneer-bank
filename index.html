@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section id="login-area">
+    <section id="login-area" class="container">
         <h1 class="text-center">Welcome to Pioneer Bank</h1>
         <div class="submit-area">
             <h4>Login</h4>
-            <input type="text" class="form-control" placeholder="Email" required> <br>
-            <input type="password" class="form-control" placeholder="Password" required> <br>
+            <input type="text" class="form-control" placeholder="Email"> <br>
+            <input type="password" class="form-control" placeholder="Password"> <br>
             <button id="login" class="btn btn-success">Enter</button>
         </div>
     </section>
 
-    <section id="transaction-area">
+    <section id="transaction-area" class="container">
         <!-- Deposit info -->
         <div class="row">
             <div class="col-md-4">
@@ -94,9 +94,8 @@
 
         // deposit button event handler on enter key press
         document.getElementById('depositAmount').addEventListener('keyup', function(event) {
-            if(event.keyCode === 13) {
+            if(event.keyCode === 13) 
                 document.getElementById('addDeposit').click();
-            }
         })
 
         // withdraw button event handler on mouse click

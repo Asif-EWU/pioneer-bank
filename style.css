@@ -9,10 +9,8 @@ body {
     box-shadow: 5px 5px 10px lightGrey;
 }
 
-#login-area { display: none;}
-
 #transaction-area {
-    display: block;
+    display: none;
     margin: auto;
 }
 
